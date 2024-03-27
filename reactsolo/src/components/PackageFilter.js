@@ -1,43 +1,51 @@
 
-function PackageFilter({textinput,typeSelect,miniPrice,maxiPrice,miniRating,maxiRating,
-                        miniDuration,maxiDuration,handleChange}){
+function PackageFilter({textinput,handleTextInput,typeSelect,miniPrice,maxiPrice,miniRating,maxiRating,
+                        miniDuration,maxiDuration,handleTypeSelect,handleMiniPrice,handleMaxiPrice,
+                        handleMiniRating,handleMaxiRating,handleMiniDuration,handleMaxiDuration,handleSearch}){
     
 
     return(
         <>
             <div>
-                <form>
-                    <input type="text" name="name" value={textinput} onChange={handleChange}/>
-                    <select id="selecttype" value={typeSelect} onChange={handleChange}>
+                <form onSubmit={handleSearch}>
+                    
+                    <select id="selecttype" value={typeSelect} onChange={handleTypeSelect}>
                         <option value="Destination">Destination</option>
                         <option value="Rating">Rating</option>
-                        <option value="Duration">Duration</option>
+                        <option value="Duration">Duration(inhrs)</option>
                         <option value="Price">Price</option>
                     </select>
+                    {typeSelect === "Destination"&&(
+                        <>
+                            <label>Destination:</label>
+                            <input type="text" name="name" value={textinput} onChange={handleTextInput}/>
+                        </>
+                    )}
                     {typeSelect === "Price"&&(
                         <>
                             <label>Min Price:</label>
-                            <input type="number" value={miniPrice} onChange={handleChange}/>
+                            <input type="number" value={miniPrice} onChange={handleMiniPrice}/>
                             <label>Max Price:</label>
-                            <input type="number" value={maxiPrice} onChange={handleChange}/>
+                            <input type="number" value={maxiPrice} onChange={handleMaxiPrice}/>
                         </>
                     )}
                     {typeSelect === "Rating"&&(
                         <>
-                            <label>Min Price:</label>
-                            <input type="number" value={miniRating} onChange={handleChange}/>
-                            <label>Max Price:</label>
-                            <input type="number" value={maxiRating} onChange={handleChange}/>
+                            <label>MinRating:</label>
+                            <input type="number" value={miniRating} onChange={handleMiniRating}/>
+                            <label>MaxRating:</label>
+                            <input type="number" value={maxiRating} onChange={handleMaxiRating}/>
                         </>
                     )}
                     {typeSelect === "Duration"&&(
                         <>
-                            <label>Min Price:</label>
-                            <input type="number" value={miniDuration} onChange={handleChange}/>
-                            <label>Max Price:</label>
-                            <input type="number" value={maxiDuration} onChange={handleChange}/>
+                            <label>MinDuration:</label>
+                            <input type="number" value={miniDuration} onChange={handleMiniDuration}/>
+                            <label>MaxDuration:</label>
+                            <input type="number" value={maxiDuration} onChange={handleMaxiDuration}/>
                         </>
                     )}
+                    <button type="submit">Search</button>
                 </form>
             </div>
 
