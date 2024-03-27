@@ -18,7 +18,7 @@ function App() {
   }
 
   const [query,setQuery]=useState("");
-  const [selectType,setSelectType]=useState('');
+  const [selectType,setSelectType]=useState('Destination');
   const [minPrice,setMinPrice]=useState('');
   const [maxPrice,setMaxPrice]=useState('');
   const [minRating,setMinRating]=useState('');
@@ -61,8 +61,48 @@ function App() {
     console.log("The selection option is ",e.target.value);
     setMaxRating(e.target.value);  }
   
+    const searchHandle=(e)=>{
+      e.preventDefault();
+      let newlists = [...packagelists];
+      
+      if(selectType === "Destination" && query.trim() !== ""){
+        newlists = newlists.filter((item)=>
+        item.Destination.toLowerCase().includes(query.toLowerCase())
+      )
+      }
+      if(selectType==="Price"){
+        newlists = newlists.filter((item)=>
+          parseFloat(item.price)>=parseFloat(minPrice)&&
+          parseFloat(item.price)<=parseFloat(maxPrice)
+        )
+      }
+      if(selectType==="Rating"){
+        newlists=newlists.filter((item)=>
+          parseFloat(item.Rating)>=parseFloat(minRating)&&
+          parseFloat(item.Rating)<=parseFloat(maxRating)
+        )
+      }
+      if(selectType==="Duration"){
+        newlists=newlists.filter((item)=>
+          parseFloat(item.Duration)>=parseFloat(minDuration)&&
+          parseFloat(item.Duration)<=parseFloat(maxDuration)
+        )
+      } 
+      
+      setPackagelists(newlists);  
+   }  
 
-  
+   const handleReset=(e)=>{
+    e.preventDefault();
+    setQuery("");
+    setMinPrice("");
+    setMaxPrice("");
+    setMinRating("");
+    setMaxRating("");
+    setMinDuration("");
+    setMaxDuration("");
+    getLists();
+   }
 
   return (
 
@@ -73,7 +113,7 @@ function App() {
       <PackageFilter textinput={query}  handleTextInput={handleInputText} typeSelect={selectType} miniPrice={minPrice} maxiPrice={maxPrice} 
       miniRating={minRating} maxiRating={maxRating} miniDuration={minDuration} maxiDuration={maxDuration} handleTypeSelect={handleSelectType}
       handleMiniPrice={handleMinPrice} handleMaxiPrice={handleMaxPrice} handleMiniDuration={handleMinDuration} handleMaxiDuration={handleMaxDuration}
-      handleMiniRating={handleMinRating} handleMaxiRating={handleMaxRating} />
+      handleMiniRating={handleMinRating} handleMaxiRating={handleMaxRating} handleSearch={searchHandle} resetHandle={handleReset}/>
       <PackageList lists={packagelists} />
       </div>
     </>

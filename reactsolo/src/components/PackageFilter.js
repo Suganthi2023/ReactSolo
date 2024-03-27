@@ -1,7 +1,7 @@
 
 function PackageFilter({textinput,handleTextInput,typeSelect,miniPrice,maxiPrice,miniRating,maxiRating,
                         miniDuration,maxiDuration,handleTypeSelect,handleMiniPrice,handleMaxiPrice,
-                        handleMiniRating,handleMaxiRating,handleMiniDuration,handleMaxiDuration,handleSearch}){
+                        handleMiniRating,handleMaxiRating,handleMiniDuration,handleMaxiDuration,handleSearch,resetHandle}){
     
 
     return(
@@ -46,6 +46,7 @@ function PackageFilter({textinput,handleTextInput,typeSelect,miniPrice,maxiPrice
                         </>
                     )}
                     <button type="submit">Search</button>
+                    <button type="submit" onClick={resetHandle}>Reset</button>                    
                 </form>
             </div>
 
