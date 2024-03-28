@@ -1,0 +1,74 @@
+body{
+    background-image:url(/src/images/city2.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin:0;
+    padding:0;
+    
+}
+
+.message{
+    color:black;
+    font-size:x-large;
+    font-weight: 1000px;
+    
+}
+
+h1{
+    color:rgb(252, 64, 89);
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+h2{
+    color:rgb(179, 128, 226)
+}
+
+.card{
+    display: inline-block;
+    border-style:double;
+    border-color: rgb(5, 70, 32);
+    padding-right: 20px 20px 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+    color: rgb(71, 2, 2);
+    font-weight: bold;
+}
+
+.card button{
+    height:40px;
+    width:80px;
+}
+
+.selectionform{
+    font-size: larger;
+    font-weight: 600;    
+}
+
+.selectionform button{
+    background-color: rgb(174, 112, 233);
+    height: 30px;
+    width: 70px;
+    border-radius: 20px;
+   
+}
+
+.selectionform input{
+    height: 20px;
+    width: 200px;
+    background-color: rgb(183, 167, 199);
+    font-size: medium;
+}
+
+.selectionform select {
+    height: 30px;
+    background-color: rgb(231, 71, 191);
+    font-size: medium;
+    font-weight: 1000px;
+    border: 20px;
+    border-radius: 30px;
+}

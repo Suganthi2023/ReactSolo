@@ -5,11 +5,12 @@ function PackageFilter({textinput,handleTextInput,typeSelect,miniPrice,maxiPrice
     
 
     return(
+        /*UI for the selection dropdown, form for typing filtering options */
         <>
             <div>
-                <form onSubmit={handleSearch}>
+                <form className="selectionform"onSubmit={handleSearch}>
                     
-                    <select id="selecttype" value={typeSelect} onChange={handleTypeSelect}>
+                    <select className="dropdown" id="selecttype" value={typeSelect} onChange={handleTypeSelect}>
                         <option value="Destination">Destination</option>
                         <option value="Rating">Rating</option>
                         <option value="Duration">Duration(inhrs)</option>
@@ -46,7 +47,9 @@ function PackageFilter({textinput,handleTextInput,typeSelect,miniPrice,maxiPrice
                         </>
                     )}
                     <button type="submit">Search</button>
-                    <button type="submit" onClick={resetHandle}>Reset</button>                    
+                    <p>To view all available Packages please press reset.</p>
+                    <button type="submit" onClick={resetHandle}>Reset</button>
+                    <p>For all inquiries email us at contact@travellink.com</p>                    
                 </form>
             </div>
 
