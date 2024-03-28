@@ -150,7 +150,7 @@ function App() {
       handleMiniPrice={handleMinPrice} handleMaxiPrice={handleMaxPrice} handleMiniDuration={handleMinDuration} handleMaxiDuration={handleMaxDuration}
       handleMiniRating={handleMinRating} handleMaxiRating={handleMaxRating} handleSearch={searchHandle} resetHandle={handleReset}/>
       {noPackageFound?(
-        <p className="message">Sorry, no packages found matching your selection. Please try again.</p>
+        <p className="message">Sorry! no packages found matching your selection. Please try again.</p>
       ):(<PackageList lists={searchlists} />)}      
       </div>
     </>
