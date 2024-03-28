@@ -7,7 +7,7 @@ TranvelLink offers travel packages for various destinations. It allows the user 
 destination, price,rating as well as duration.It is just a browsing platform for now. The booking is not enabled at this time. 
 
 # Technologies & Tools Used:
-- React,Redux
+- React
 - Google Slides(For Planning)
 - GitHub 
 - VS Code and Git Bash
