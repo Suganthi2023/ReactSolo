@@ -14,3 +14,6 @@ destination, price,rating as well as duration.It is just a browsing platform for
 - Coding in Colors Youtube lectures
 - www.w3schools.com 
 - Assignments for reference.
+
+# Component Tree
+Component Tree is in images folder
